@@ -1,0 +1,61 @@
+{% extends 'Account/base.html' %}
+
+{% block content %}
+{% load static %}
+<br/><br/><br/>
+<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<h3 id="form-title">Make payment:{{payment.amount}}</h3>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+
+
+				   		<script src="https://js.paystack.co/v1/inline.js"></script>
+                        <button type="submit" class="btn btn-success"onclick="payWithPayStack()" id="django-paystack-button" > Pay </button>
+
+				</div>
+
+
+
+			{% for message in messages %}
+					<p id="messages">{{ message }}</p>
+			{% endfor %}
+			</div>
+		</div>
+</div>
+<script>
+	function payWithPayStack() {
+		let currency= "NGN";
+		let plan="";
+		let ref="{{payment.ref}}";
+		let obj={
+			key:"pk_test_8ad724f42387bcb74467721b8c6f92d3b2524870",
+			email:"{{payment.email}}",
+			amount:"{{payment.amount_value}}",
+			subaccount:"ACCT_ig0borhrw16gbrt",
+			ref:ref,
+			callback: function(response){
+				window.location.href= "{% url 'verify-payment' payment.ref %}";
+			}
+		}
+
+		if(Boolean(currency)){
+			obj.currency= currency.toUpperCase()
+		}
+		if(Boolean(plan)){
+			obj.plan = plan;
+		}
+
+
+		var handler = PaystackPop.setup(obj);
+		handler.openIframe();
+	}
+
+
+</script>
+
+
+
+{% endblock %}

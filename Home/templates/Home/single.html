@@ -1,0 +1,93 @@
+wd{% extends 'Account/base.html' %}
+
+{% block content %}
+
+{% load static %}
+{% load humanize %}
+<!-- Navbar -->
+
+<!--Carousel Wrapper-->
+
+<main xmlns="http://www.w3.org/1999/html">
+    <div class="mine_shit">
+        <div class="container">
+
+            <!--Navbar-->
+
+            <!--/.Navbar-->
+
+            <!--Section: Products v.3-->
+            <section class="text-center mb-9">
+
+                <!--Grid row-->
+                <div class="row wow fadeIn">
+
+                    <!--Grid column-->
+
+                    <div class="col-lg-12 col-md-6 mb-6">
+
+                        <!--Card-->
+                        <a href="">
+                            <div class="card">
+
+                                <!--Card image-->
+
+                                <!--Card image-->
+
+                                <!--Card content-->
+                                {% if cust %}
+                                <div class="card-body text-center">
+                                    <!--Category & Title-->
+                                    <a href="" class="grey-text">
+                                        <h5>{{cust.user}}</h5>
+                                    </a>
+                                    <h5>
+                                        <strong>
+                                            <a href="" class="dark-grey-text">
+                                                <span class="badge badge-pill danger-color">yes</span>
+                                            </a>
+                                        </strong>
+                                    </h5>
+
+                                    <h4 class="font-weight-bold blue-text">
+                                        <strong>Paid:#{{cust.amount}}</strong>
+                                    </h4>
+                                    <a href="" class="red-text">
+                                        <h5>{{cust.date_created |naturaltime}}</h5>
+                                    </a>
+                                    <a href="" class="grey-text">
+                                        <h5>Date:{{cust.date_created}}</h5>
+                                    </a>
+                                    <a href="{% url 'single_delete' cust.id %}" class="btn btn-success">
+                                        <h5>Accept</h5>
+                                    </a>
+                                    <div class="mt-4">
+					                    <div class="d-flex justify-content-center links">
+						                    <a href=" {% url 'single' cust.id %}" class="ml-2">Previous</a>
+					                    </div>
+				                    </div>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <!--Card-->
+                        </a>
+                    </div>
+                    <!--Grid column--
+                    <!--Fourth column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+
+                <!--Grid row-->
+
+            </section>
+            <!--Section: Products v.3-->
+
+            </nav>
+        </div>
+    </div>
+</main>
+
+{% endblock%}

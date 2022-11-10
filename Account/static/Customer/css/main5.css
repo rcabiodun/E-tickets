@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing:border-box;
+
+
+}
+
+.my_text{
+    text-align:center;
+    padding-top:120px;
+    color:#274756;
+}
+
+.my_text h1{
+    font-size: 72px;
+
+}
+.mine_shit{
+    padding-top:240px;
+    padding-bottom:60px;
+    margin-bottom:100px;
+}
+
+.my_text p{
+    font-size:25px;
+}
+
+.my_links{
+    text-align:center;
+    padding-top:10px;
+}
+
+.my_links a{
+    text-decoration:none;
+    width:200px;
+    height:200px;
+    display:inline-block;
+    color:#274756;
+    margin:30px;
+    padding:20px;
+    padding-top:80px;
+    font-size:25px;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position:relative;
+    z-index:1;
+    border-radius:5px;
+    border-top-left-radius:15px;
+
+}
+
+.my_links a span{
+    width:0%;
+    height:100%;
+    position:absolute;
+    z-index:-1;
+    top:0;
+    left:0;
+    background: #33ccff;
+    transition:0.3s;
+    border-radius:5px;
+    border-top-left-radius:15px;
+}
+
+.my_links a:hover span{
+    width:100%;
+}
+
